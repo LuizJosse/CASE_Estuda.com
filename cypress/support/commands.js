@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', () => {
+  cy.visit('https://bstackdemo.com/signin')
+  cy.contains('Select Username').click()
+  cy.contains('.css-26l3qy-menu', 'existing_orders_user').click()
+  cy.contains('Select Password').click()
+  cy.contains('.css-26l3qy-menu', 'testingisfun99').click()
+  cy.get('#login-btn').click()
+  cy.get('a > .m-auto').should('be.visible')
+})
+
+Cypress.Commands.add('itens', () => {
+ cy.get('.shelf-item__buy-btn').eq(5).click()
+ cy.get('.shelf-item__buy-btn').eq(6).click()
+ cy.get('.bag__quantity')
+    .should('be.visible')
+    .and('not.have.text', '0')
+})
