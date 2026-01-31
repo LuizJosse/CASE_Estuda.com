@@ -55,3 +55,11 @@ Funcionalidade: Carrinho de compras
     E acessar o carrinho
     Então os itens previamente adicionados devem permanecer no carrinho
     E as quantidades e valores devem estar corretos
+  
+  Cenário: CT18 - Adicionar item sem estar logado
+    Dado que o usuário não está autenticado no sistema
+    E existem produtos disponíveis na página de listagem
+    Quando o usuário acessar a URL "https://bstackdemo.com/"
+    E selecionar um produto na página de listagem
+    E clicar no botão "Adicionar ao carrinho"
+    Então o sistema deve redirecionar o usuário para a tela de login

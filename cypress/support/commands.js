@@ -41,3 +41,10 @@ Cypress.Commands.add('itens', () => {
     .should('be.visible')
     .and('not.have.text', '0')
 })
+
+Cypress.Commands.add('UmItem', () => {
+cy.get('.shelf-item__buy-btn').first().click()
+cy.get('.bag__quantity')
+  .should('be.visible')
+  .and('not.have.text', '0')
+})

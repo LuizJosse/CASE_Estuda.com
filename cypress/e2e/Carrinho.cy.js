@@ -80,7 +80,7 @@ describe('Itens ao carrinho', () => {
       .and('not.have.text', '0') 
   })
 
-  it.only('CT16 - Relizar Logout com item no carrinho  ', () => {
+  it('CT16 - Relizar Logout com item no carrinho  ', () => {
   cy.login()
   cy.itens()
   cy.get('#signin').click()
@@ -90,6 +90,18 @@ describe('Itens ao carrinho', () => {
     .should('be.visible')
     .and('not.have.text', '0') 
   })
+  
+  it('CT17 – Adicionar o mesmo item mais de uma vez no carrinho  ', () => {
+    cy.login()
+    cy.UmItem()
+    cy.UmItem()
+  })
 
+  it('CT18 - Adicionar item sem estar logado ', () => {
+    cy.visit('https://bstackdemo.com/')
+    cy.UmItem()
+    cy.get('.buy-btn').click()
+    cy.get('#login-btn').should('have.text', 'Log In')
+  })
 })
 
