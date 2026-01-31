@@ -56,6 +56,16 @@ Funcionalidade: Carrinho de compras
     Então os itens previamente adicionados devem permanecer no carrinho
     E as quantidades e valores devem estar corretos
   
+ Cenário: CT17 - Adicionar o mesmo item mais de uma vez no carrinho
+    Dado que o site "https://bstackdemo.com/" está acessível
+    E que o usuário está autenticado
+    E que existe um produto disponível no catálogo
+    Quando o usuário selecionar o produto na página de listagem
+    E clicar no botão "Adicionar ao carrinho"
+    E clicar novamente no botão "Adicionar ao carrinho" do mesmo produto
+    Então a quantidade do produto no carrinho deve ser atualizada corretamente
+    E o produto não deve ser duplicado no carrinho
+
   Cenário: CT18 - Adicionar item sem estar logado
     Dado que o usuário não está autenticado no sistema
     E existem produtos disponíveis na página de listagem
