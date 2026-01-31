@@ -89,6 +89,40 @@ describe('Funcionalidade: Login', () => {
   cy.get('#login-btn').click()
   cy.contains('Invalid Password')
     .should('be.visible')
-  
   })
+
+  it('CT05 - Login com campos Vazios', () => {
+    cy.get('#login-btn').click()
+    cy.contains('Invalid Username')
+    .should('be.visible')
+  })
+
+  it('CT06 - Login com campo username Vazio', () => {
+   cy.contains('Select Password').click()
+   cy.contains('.css-26l3qy-menu', 'testingisfun99').click()
+   cy.get('#login-btn').click()
+   cy.contains('Invalid Username')
+    .should('be.visible')
+  })
+
+  it('CT07 - Login com campo Password Vazio', () => {
+   cy.contains('Select Username').click()
+   cy.contains('.css-26l3qy-menu', 'existing_orders_user').click()
+   cy.get('#login-btn').click()
+   cy.contains('Invalid Password')
+    .should('be.visible')
+  })
+
+ it('CT08 - Login com usuario Bloqueado ', () => {
+   cy.contains('Select Username').click({ force: true })
+   cy.get('.css-26l3qy-menu')
+    .contains('locked_user')
+    .click()
+    cy.contains('Select Password').click()
+    cy.contains('.css-26l3qy-menu', 'testingisfun99').click()
+    cy.get('#login-btn').click()
+    cy.contains('Your account has been locked.')
+    .should('be.visible')
+  })
+  
 })
