@@ -5,7 +5,7 @@ describe('Adicionar itens ao carrinho', () => {
     cy.visit('https://bstackdemo.com/')
   })
 
-  it('adicionar um item ao carrinho ', () => {
+  it('CT09 - Adicionar item ao carrinho  ', () => {
     cy.get('.shelf-item__buy-btn').first().click()
 
     cy.get('.bag__quantity')
@@ -13,7 +13,7 @@ describe('Adicionar itens ao carrinho', () => {
       .and('not.have.text', '0')
   })
 
-  it('adicionar mais um item ao crrinho', () => {
+  it('CT10 - Adicionar mais de um item ao carrinho ', () => {
     cy.get('.shelf-item__buy-btn').eq(5).click()
     cy.get('.shelf-item__buy-btn').eq(6).click()
     
