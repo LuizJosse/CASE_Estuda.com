@@ -38,4 +38,38 @@ Antes de executar os testes, a máquina deve atender aos seguintes requisitos:
 
 1. Clone este repositório:  
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+[https://github.com/LuizJosse/CASE_Estuda.com.git]
+2.Entre na pasta do projeto:
+
+cd seu-repositorio
+
+Instale todas as dependências:
+
+npm install
+
+Isso instalará Cypress, Faker.js, Cucumber e todas as dependências do projeto.
+
+Estrutura do Projeto
+
+cypress/ → Contém todos os testes automatizados
+
+e2e/ → Testes end-to-end
+
+support/commands.js → Comandos customizados (login, seleção de itens, etc.)
+
+cypress.config.js → Configurações do Cypress
+
+package.json → Gerenciador de dependências e scripts
+
+README.md → Este arquivo com instruções
+
+Execução dos Testes
+1. Abrir Cypress em modo interativo:
+npx cypress open
+
+
+Abre a interface do Cypress, permitindo escolher e executar os testes manualmente.
+
+2. Executar todos os testes no modo headless:
+npx cypress run
+
