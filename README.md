@@ -20,7 +20,8 @@ Antes de executar os testes, a máquina deve atender aos seguintes requisitos:
 5. Extensões utilizadas:  
    - Cucumber  
    - Gherkin  
-6. **Faker.js** (para geração de dados aleatórios nos formulários)  
+6. **Faker.js** (para geração de dados aleatórios nos formulários)
+   - no terminal execute : npm install @faker-js/faker --save-dev
 
 
 > Observação: É necessário **acesso à internet**, pois o site BStack Demo é online.
